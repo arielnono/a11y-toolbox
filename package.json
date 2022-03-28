@@ -14,6 +14,7 @@
     "build": "rimraf dist && tsc && rollup -c rollup.config.js && npm run analyze -- --exclude dist",
     "start:build": "web-dev-server --root-dir dist --app-index index.html --open",
     "analyze": "cem analyze --litelement",
+    "audit": "yarn audit",
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\""
   },
   "dependencies": {
@@ -48,6 +49,9 @@
     "rollup-plugin-workbox": "6.2.0",
     "tslib": "2.3.1",
     "typescript": "4.5.2"
+  },
+  "resolutions": {
+    "trim": "0.0.3"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
