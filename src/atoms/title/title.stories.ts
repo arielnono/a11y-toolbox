@@ -1,9 +1,9 @@
 import { html, TemplateResult } from 'lit';
-import './my-component.js';
+import './Title.js';
 
 export default {
-  title: 'MyComponent',
-  component: 'my-component',
+  title: 'Title',
+  component: 'a11y-title',
   argTypes: {
     backgroundColor: { control: 'color' },
   },
@@ -24,10 +24,10 @@ const Template: Story<ArgTypes> = ({
   title,
   backgroundColor = 'white',
 }: ArgTypes) => html`
-  <my-component
-    style="--my-component-background-color: ${backgroundColor}"
+  <a11y-title
+    style="--a11y-title-background-color: ${backgroundColor}"
     .title=${title}
-  ></my-component>
+  ></a11y-title>
 `;
 
 export const App = Template.bind({});

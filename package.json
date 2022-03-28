@@ -15,6 +15,7 @@
     "start:build": "web-dev-server --root-dir dist --app-index index.html --open",
     "analyze": "cem analyze --litelement",
     "audit": "yarn audit",
+    "init-dir": "node automation/createFolderWithFiles.js",
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\""
   },
   "dependencies": {
@@ -57,18 +58,31 @@
     "parser": "@typescript-eslint/parser",
     "extends": [
       "@open-wc",
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:wc/recommended",
+      "plugin:lit/recommended",
+      "plugin:lit-a11y/recommended",
       "prettier"
     ],
     "plugins": [
-      "@typescript-eslint"
+      "@typescript-eslint",
+      "lit-a11y"
     ],
     "rules": {
       "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": [
         "error"
       ],
+      "@typescript-eslint/explicit-module-boundary-types": [
+        "error",
+        {
+          "allowedNames": ["render"]
+        }
+      ],
       "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.ts", "**/*.config.js"]}],
       "import/no-unresolved": "off",
+      "import/no-duplicates": "off",
       "import/extensions": [
         "error",
         "always",
@@ -76,7 +90,15 @@
           "ignorePackages": true
         }
       ]
-    }
+    },
+    "overrides": [
+      {
+          "files": ["*.test.ts"],
+          "rules": {
+              "no-unused-expressions": "off"
+          }
+      }
+  ]
   },
   "prettier": {
     "singleQuote": true,
