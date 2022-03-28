@@ -16,7 +16,9 @@ export class MyComponent extends LitElement {
         <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
         <h1>${this.title}</h1>
 
-        <p>Edit <code>src/MyComponent.ts</code> and save to reload.</p>
+        <p class="text">
+          Edit <code>src/MyComponent.ts</code> and save to reload.
+        </p>
         <a
           class="app-link"
           href="https://open-wc.org/guides/developing-components/code-examples"

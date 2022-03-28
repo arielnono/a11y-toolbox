@@ -1,9 +1,9 @@
 const merriweather = new URL(
-  '../../assets/fonts/Merriweather-Bold.woff2',
+  '../../../assets/fonts/Merriweather-Bold.woff2',
   import.meta.url
 ).href;
 const Atkinson = new URL(
-  '../../assets/fonts/Atkinson-Hyperlegible-Regular-102a.woff2',
+  '../../../assets/fonts/Atkinson-Hyperlegible-Regular-102a.woff2',
   import.meta.url
 ).href;
 

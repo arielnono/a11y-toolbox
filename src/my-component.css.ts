@@ -15,6 +15,14 @@ export const style = css`
     background-color: var(--my-component-background-color);
   }
 
+  h1 {
+    font-family: var(--headings-font-family);
+  }
+
+  .text {
+    font-family: var(--body-font-family);
+  }
+
   main {
     flex-grow: 1;
   }
