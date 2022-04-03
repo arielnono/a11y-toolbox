@@ -2,51 +2,31 @@ import { css } from 'lit';
 
 export const style = css`
   :host {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: calc(10px + 2vmin);
-    color: #1a2b42;
-    max-width: 960px;
-    margin: 0 auto;
-    text-align: center;
-    background-color: var(--my-component-background-color);
   }
 
-  h1 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     font-family: var(--headings-font-family);
   }
 
-  .text {
-    font-family: var(--body-font-family);
-  }
-
-  main {
-    flex-grow: 1;
-  }
-
-  .logo {
-    margin-top: 36px;
-    animation: app-logo-spin infinite 20s linear;
-  }
-
-  @keyframes app-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
+  .x_large {
+    include for-phone-only {
+      font-size: 123px;
     }
   }
 
-  .app-footer {
-    font-size: calc(12px + 0.5vmin);
-    align-items: center;
+  .large {
   }
 
-  .app-footer a {
-    margin-left: 5px;
+  .medium {
+  }
+
+  .small {
+  }
+
+  .x_small {
   }
 `;

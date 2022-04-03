@@ -24,7 +24,7 @@
         "allowedNames": ["render"]
       }
     ],
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.ts", "**/*.config.js"]}],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.ts", "**/*.config.js", "**/*.stories.ts"]}],
     "import/no-unresolved": "off",
     "import/no-duplicates": "off",
     "import/extensions": [

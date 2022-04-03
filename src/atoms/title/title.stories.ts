@@ -1,8 +1,8 @@
 import { html, TemplateResult } from 'lit';
-import './Title.js';
 
+import './Title.js';
 export default {
-  title: 'Title',
+  title: 'Atoms/Title',
   component: 'a11y-title',
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -27,6 +27,27 @@ const Template: Story<ArgTypes> = ({
   <a11y-title
     style="--a11y-title-background-color: ${backgroundColor}"
     .title=${title}
+    semanticHeader="h1"
+  ></a11y-title>
+  <a11y-title
+    style="--a11y-title-background-color: ${backgroundColor}"
+    .title=${title}
+    semanticHeader="h2"
+  ></a11y-title>
+  <a11y-title
+    style="--a11y-title-background-color: ${backgroundColor}"
+    .title=${title}
+    semanticHeader="h3"
+  ></a11y-title>
+  <a11y-title
+    style="--a11y-title-background-color: ${backgroundColor}"
+    .title=${title}
+    semanticHeader="h4"
+  ></a11y-title>
+  <a11y-title
+    style="--a11y-title-background-color: ${backgroundColor}"
+    .title=${title}
+    semanticHeader="h5"
   ></a11y-title>
 `;
 
