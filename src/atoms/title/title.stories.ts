@@ -1,6 +1,7 @@
 import { html, TemplateResult } from 'lit';
 
 import './Title.js';
+
 export default {
   title: 'Atoms/Title',
   component: 'a11y-title',
