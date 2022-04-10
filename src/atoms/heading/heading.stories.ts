@@ -27,34 +27,50 @@ const Template: Story<ArgTypes> = ({
 }: ArgTypes) => html`
   <a11y-heading
     style="--a11y-heading-background-color: ${backgroundColor}"
-    .heading="h1 - ${heading}"
+    .title="h1 - ${heading}"
     semanticLevel="h1"
     appearance="x_large"
   ></a11y-heading>
   <a11y-heading
     style="--a11y-heading-background-color: ${backgroundColor}"
-    .heading="h2 - ${heading}"
+    .title="h2 - ${heading}"
     semanticLevel="h2"
     appearance="large"
   ></a11y-heading>
   <a11y-heading
     style="--a11y-heading-background-color: ${backgroundColor}"
-    .heading="h3 - ${heading}"
+    .title="h3 - ${heading}"
     semanticLevel="h3"
     appearance="medium"
   ></a11y-heading>
   <a11y-heading
     style="--a11y-heading-background-color: ${backgroundColor}"
-    .heading="h4 - ${heading}"
+    .title="h4 - ${heading}"
     semanticLevel="h4"
     appearance="small"
   ></a11y-heading>
   <a11y-heading
     style="--a11y-heading-background-color: ${backgroundColor}"
-    .heading="h5 - ${heading}"
+    .title="h5 - ${heading}"
     semanticLevel="h5"
     appearance="x_small"
   ></a11y-heading>
+  <div>
+    <p>Documentation</p>
+    <ol>
+      <li>
+        <a href="https://www.w3.org/TR/WCAG20-TECHS/H42"
+          >Using h1-h6 to identify headings</a
+        >
+      </li>
+      <li>
+        <a href="https://www.w3.org/TR/WCAG20-TECHS/H69"
+          >Providing heading elements at the beginning of each section of
+          content</a
+        >
+      </li>
+    </ol>
+  </div>
 `;
 
 export const Header = Template.bind({});
