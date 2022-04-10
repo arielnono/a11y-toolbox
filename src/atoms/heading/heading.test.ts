@@ -1,16 +1,16 @@
 import { html } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
 
-import './Title.js';
-import { Title } from './Title.js';
+import './Heading.js';
+import { Heading } from './Heading.js';
 import {
-  HeaderLevel,
-  HeaderHeight,
+  HeadingLevel,
+  HeadingAppearance,
   sanitizeSemanticHeaderInput,
   sanitizeAppearanceInput,
-} from './title.utils.js';
+} from './heading.utils.js';
 
-describe('Title component', () => {
+describe('Heading component', () => {
   const titleValue = 'text-value';
   const testSuite = [
     {
@@ -19,8 +19,8 @@ describe('Title component', () => {
         value: "<h1 class='x-large'>text-value</h1>",
       },
       given: {
-        semanticHeader: '',
-        appearance: HeaderHeight.X_LARGE,
+        semanticLevel: '',
+        appearance: HeadingAppearance.X_LARGE,
       },
     },
     {
@@ -29,7 +29,7 @@ describe('Title component', () => {
         value: "<h1 class='x-large'>text-value</h1>",
       },
       given: {
-        semanticHeader: HeaderLevel.H1,
+        semanticLevel: HeadingLevel.H1,
         appearance: '',
       },
     },
@@ -39,8 +39,8 @@ describe('Title component', () => {
         value: "<h1 class='x-large'>text-value</h1>",
       },
       given: {
-        semanticHeader: 'toto',
-        appearance: HeaderHeight.X_LARGE,
+        semanticLevel: 'toto',
+        appearance: HeadingAppearance.X_LARGE,
       },
     },
     {
@@ -49,7 +49,7 @@ describe('Title component', () => {
         value: "<h1 class='x-large'>text-value</h1>",
       },
       given: {
-        semanticHeader: HeaderLevel.H1,
+        semanticLevel: HeadingLevel.H1,
         appearance: 'toto',
       },
     },
@@ -59,8 +59,8 @@ describe('Title component', () => {
         value: "<h1 class='x-large'>text-value</h1>",
       },
       given: {
-        semanticHeader: HeaderLevel.H1,
-        appearance: HeaderHeight.X_LARGE,
+        semanticLevel: HeadingLevel.H1,
+        appearance: HeadingAppearance.X_LARGE,
       },
     },
     {
@@ -69,8 +69,8 @@ describe('Title component', () => {
         value: "<h1 class='large'>text-value</h1>",
       },
       given: {
-        semanticHeader: HeaderLevel.H1,
-        appearance: HeaderHeight.LARGE,
+        semanticLevel: HeadingLevel.H1,
+        appearance: HeadingAppearance.LARGE,
       },
     },
     {
@@ -79,8 +79,8 @@ describe('Title component', () => {
         value: "<h1 class='medium'>text-value</h1>",
       },
       given: {
-        semanticHeader: HeaderLevel.H1,
-        appearance: HeaderHeight.MEDIUM,
+        semanticLevel: HeadingLevel.H1,
+        appearance: HeadingAppearance.MEDIUM,
       },
     },
     {
@@ -89,8 +89,8 @@ describe('Title component', () => {
         value: "<h1 class='small'>text-value</h1>",
       },
       given: {
-        semanticHeader: HeaderLevel.H1,
-        appearance: HeaderHeight.SMALL,
+        semanticLevel: HeadingLevel.H1,
+        appearance: HeadingAppearance.SMALL,
       },
     },
     {
@@ -99,8 +99,8 @@ describe('Title component', () => {
         value: "<h1 class='x-small'>text-value</h1>",
       },
       given: {
-        semanticHeader: HeaderLevel.H1,
-        appearance: HeaderHeight.X_SMALL,
+        semanticLevel: HeadingLevel.H1,
+        appearance: HeadingAppearance.X_SMALL,
       },
     },
     {
@@ -109,8 +109,8 @@ describe('Title component', () => {
         value: "<h2 class='x-large'>text-value</h2>",
       },
       given: {
-        semanticHeader: HeaderLevel.H2,
-        appearance: HeaderHeight.X_LARGE,
+        semanticLevel: HeadingLevel.H2,
+        appearance: HeadingAppearance.X_LARGE,
       },
     },
     {
@@ -119,8 +119,8 @@ describe('Title component', () => {
         value: "<h2 class='large'>text-value</h2>",
       },
       given: {
-        semanticHeader: HeaderLevel.H2,
-        appearance: HeaderHeight.LARGE,
+        semanticLevel: HeadingLevel.H2,
+        appearance: HeadingAppearance.LARGE,
       },
     },
     {
@@ -129,8 +129,8 @@ describe('Title component', () => {
         value: "<h2 class='medium'>text-value</h2>",
       },
       given: {
-        semanticHeader: HeaderLevel.H2,
-        appearance: HeaderHeight.MEDIUM,
+        semanticLevel: HeadingLevel.H2,
+        appearance: HeadingAppearance.MEDIUM,
       },
     },
     {
@@ -139,8 +139,8 @@ describe('Title component', () => {
         value: "<h2 class='small'>text-value</h2>",
       },
       given: {
-        semanticHeader: HeaderLevel.H2,
-        appearance: HeaderHeight.SMALL,
+        semanticLevel: HeadingLevel.H2,
+        appearance: HeadingAppearance.SMALL,
       },
     },
     {
@@ -149,8 +149,8 @@ describe('Title component', () => {
         value: "<h2 class='x-small'>text-value</h2>",
       },
       given: {
-        semanticHeader: HeaderLevel.H2,
-        appearance: HeaderHeight.X_SMALL,
+        semanticLevel: HeadingLevel.H2,
+        appearance: HeadingAppearance.X_SMALL,
       },
     },
     {
@@ -159,8 +159,8 @@ describe('Title component', () => {
         value: "<h3 class='x-large'>text-value</h3>",
       },
       given: {
-        semanticHeader: HeaderLevel.H3,
-        appearance: HeaderHeight.X_LARGE,
+        semanticLevel: HeadingLevel.H3,
+        appearance: HeadingAppearance.X_LARGE,
       },
     },
     {
@@ -169,8 +169,8 @@ describe('Title component', () => {
         value: "<h3 class='large'>text-value</h3>",
       },
       given: {
-        semanticHeader: HeaderLevel.H3,
-        appearance: HeaderHeight.LARGE,
+        semanticLevel: HeadingLevel.H3,
+        appearance: HeadingAppearance.LARGE,
       },
     },
     {
@@ -179,8 +179,8 @@ describe('Title component', () => {
         value: "<h3 class='medium'>text-value</h3>",
       },
       given: {
-        semanticHeader: HeaderLevel.H3,
-        appearance: HeaderHeight.MEDIUM,
+        semanticLevel: HeadingLevel.H3,
+        appearance: HeadingAppearance.MEDIUM,
       },
     },
     {
@@ -189,8 +189,8 @@ describe('Title component', () => {
         value: "<h3 class='small'>text-value</h3>",
       },
       given: {
-        semanticHeader: HeaderLevel.H3,
-        appearance: HeaderHeight.SMALL,
+        semanticLevel: HeadingLevel.H3,
+        appearance: HeadingAppearance.SMALL,
       },
     },
     {
@@ -199,8 +199,8 @@ describe('Title component', () => {
         value: "<h3 class='x-small'>text-value</h3>",
       },
       given: {
-        semanticHeader: HeaderLevel.H3,
-        appearance: HeaderHeight.X_SMALL,
+        semanticLevel: HeadingLevel.H3,
+        appearance: HeadingAppearance.X_SMALL,
       },
     },
     {
@@ -209,8 +209,8 @@ describe('Title component', () => {
         value: "<h4 class='x-large'>text-value</h4>",
       },
       given: {
-        semanticHeader: HeaderLevel.H4,
-        appearance: HeaderHeight.X_LARGE,
+        semanticLevel: HeadingLevel.H4,
+        appearance: HeadingAppearance.X_LARGE,
       },
     },
     {
@@ -219,8 +219,8 @@ describe('Title component', () => {
         value: "<h4 class='large'>text-value</h4>",
       },
       given: {
-        semanticHeader: HeaderLevel.H4,
-        appearance: HeaderHeight.LARGE,
+        semanticLevel: HeadingLevel.H4,
+        appearance: HeadingAppearance.LARGE,
       },
     },
     {
@@ -229,8 +229,8 @@ describe('Title component', () => {
         value: "<h4 class='medium'>text-value</h4>",
       },
       given: {
-        semanticHeader: HeaderLevel.H4,
-        appearance: HeaderHeight.MEDIUM,
+        semanticLevel: HeadingLevel.H4,
+        appearance: HeadingAppearance.MEDIUM,
       },
     },
     {
@@ -239,8 +239,8 @@ describe('Title component', () => {
         value: "<h4 class='small'>text-value</h4>",
       },
       given: {
-        semanticHeader: HeaderLevel.H4,
-        appearance: HeaderHeight.SMALL,
+        semanticLevel: HeadingLevel.H4,
+        appearance: HeadingAppearance.SMALL,
       },
     },
     {
@@ -249,8 +249,8 @@ describe('Title component', () => {
         value: "<h4 class='x-small'>text-value</h4>",
       },
       given: {
-        semanticHeader: HeaderLevel.H4,
-        appearance: HeaderHeight.X_SMALL,
+        semanticLevel: HeadingLevel.H4,
+        appearance: HeadingAppearance.X_SMALL,
       },
     },
     {
@@ -259,8 +259,8 @@ describe('Title component', () => {
         value: "<h5 class='x-large'>text-value</h5>",
       },
       given: {
-        semanticHeader: HeaderLevel.H5,
-        appearance: HeaderHeight.X_LARGE,
+        semanticLevel: HeadingLevel.H5,
+        appearance: HeadingAppearance.X_LARGE,
       },
     },
     {
@@ -269,8 +269,8 @@ describe('Title component', () => {
         value: "<h5 class='large'>text-value</h5>",
       },
       given: {
-        semanticHeader: HeaderLevel.H5,
-        appearance: HeaderHeight.LARGE,
+        semanticLevel: HeadingLevel.H5,
+        appearance: HeadingAppearance.LARGE,
       },
     },
     {
@@ -279,8 +279,8 @@ describe('Title component', () => {
         value: "<h5 class='medium'>text-value</h5>",
       },
       given: {
-        semanticHeader: HeaderLevel.H5,
-        appearance: HeaderHeight.MEDIUM,
+        semanticLevel: HeadingLevel.H5,
+        appearance: HeadingAppearance.MEDIUM,
       },
     },
     {
@@ -289,8 +289,8 @@ describe('Title component', () => {
         value: "<h5 class='small'>text-value</h5>",
       },
       given: {
-        semanticHeader: HeaderLevel.H5,
-        appearance: HeaderHeight.SMALL,
+        semanticLevel: HeadingLevel.H5,
+        appearance: HeadingAppearance.SMALL,
       },
     },
     {
@@ -299,24 +299,24 @@ describe('Title component', () => {
         value: "<h5 class='x-small'>text-value</h5>",
       },
       given: {
-        semanticHeader: HeaderLevel.H5,
-        appearance: HeaderHeight.X_SMALL,
+        semanticLevel: HeadingLevel.H5,
+        appearance: HeadingAppearance.X_SMALL,
       },
     },
   ];
 
   testSuite.forEach(async testCase => {
-    it(`should return the html of ${testCase.expected.label} when the semantic header provided is ${testCase.given.semanticHeader} and the appearance is ${testCase.given.appearance}`, async () => {
-      const element: Title = await fixture(
-        html`<a11y-title
-          semanticHeader="${testCase.given.semanticHeader}"
+    it(`should return the html of ${testCase.expected.label} when the semantic header provided is ${testCase.given.semanticLevel} and the appearance is ${testCase.given.appearance}`, async () => {
+      const element: Heading = await fixture(
+        html`<a11y-heading
+          semanticLevel="${testCase.given.semanticLevel}"
           appearance="${testCase.given.appearance}"
           title="${titleValue}"
         >
-        </a11y-title>`
+        </a11y-heading>`
       );
       const header = element.shadowRoot?.querySelector(
-        sanitizeSemanticHeaderInput(testCase.given.semanticHeader)
+        sanitizeSemanticHeaderInput(testCase.given.semanticLevel)
       ) || {
         textContent: '',
         className: '',
@@ -330,13 +330,13 @@ describe('Title component', () => {
     });
 
     it('should passes the a11y audit', async () => {
-      const element: Title = await fixture(
-        html`<a11y-title
-          semanticHeader="${testCase.given.semanticHeader}"
+      const element: Heading = await fixture(
+        html`<a11y-heading
+          semanticLevel="${testCase.given.semanticLevel}"
           appearance="${testCase.given.appearance}"
           title="${titleValue}"
         >
-        </a11y-title>`
+        </a11y-heading>`
       );
       await expect(element).to.be.accessible();
     });

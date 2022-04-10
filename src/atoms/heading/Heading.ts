@@ -1,28 +1,28 @@
 import { LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-import { style } from './title.css';
+import { style } from './heading.css';
 import { globalStyle } from '../../styles/global.css';
 import {
-  HeaderLevel,
-  HeaderHeight,
+  HeadingLevel,
+  HeadingAppearance,
   HeaderLevelLiteral,
   sanitizeSemanticHeaderInput,
   sanitizeAppearanceInput,
-} from './title.utils';
+} from './heading.utils';
 
-@customElement('a11y-title')
-export class Title extends LitElement {
+@customElement('a11y-heading')
+export class Heading extends LitElement {
   @property({ type: String }) override title = 'My app';
 
-  @property({ type: HeaderLevel }) semanticHeader = HeaderLevel.H1;
+  @property({ type: HeadingLevel }) semanticLevel = HeadingLevel.H1;
 
-  @property({ type: HeaderHeight }) appearance = HeaderHeight.X_LARGE;
+  @property({ type: HeadingAppearance }) appearance = HeadingAppearance.X_LARGE;
 
   static override styles = [...globalStyle, style];
 
   override render() {
-    return HeaderLevelLiteral[sanitizeSemanticHeaderInput(this.semanticHeader)](
+    return HeaderLevelLiteral[sanitizeSemanticHeaderInput(this.semanticLevel)](
       sanitizeAppearanceInput(this.appearance),
       this.title
     );
@@ -31,6 +31,6 @@ export class Title extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'a11y-title': Title;
+    'a11y-heading': Heading;
   }
 }

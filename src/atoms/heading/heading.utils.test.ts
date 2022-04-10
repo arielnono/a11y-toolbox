@@ -1,66 +1,66 @@
 import { expect } from '@open-wc/testing';
 import {
   sanitizeSemanticHeaderInput,
-  HeaderLevel,
-  HeaderHeight,
+  HeadingLevel,
+  HeadingAppearance,
   sanitizeAppearanceInput,
-} from './title.utils';
+} from './heading.utils';
 
 describe('sanitizeSemanticHeaderInput function', () => {
   const testSuite = [
     {
       expected: {
-        value: HeaderLevel.H1,
+        value: HeadingLevel.H1,
       },
       given: {
-        semanticHeader: '',
+        semanticLevel: '',
       },
     },
     {
       expected: {
-        value: HeaderLevel.H1,
+        value: HeadingLevel.H1,
       },
       given: {
-        semanticHeader: HeaderLevel.H1,
+        semanticLevel: HeadingLevel.H1,
       },
     },
     {
       expected: {
-        value: HeaderLevel.H2,
+        value: HeadingLevel.H2,
       },
       given: {
-        semanticHeader: HeaderLevel.H2,
+        semanticLevel: HeadingLevel.H2,
       },
     },
     {
       expected: {
-        value: HeaderLevel.H3,
+        value: HeadingLevel.H3,
       },
       given: {
-        semanticHeader: HeaderLevel.H3,
+        semanticLevel: HeadingLevel.H3,
       },
     },
     {
       expected: {
-        value: HeaderLevel.H4,
+        value: HeadingLevel.H4,
       },
       given: {
-        semanticHeader: HeaderLevel.H4,
+        semanticLevel: HeadingLevel.H4,
       },
     },
     {
       expected: {
-        value: HeaderLevel.H5,
+        value: HeadingLevel.H5,
       },
       given: {
-        semanticHeader: HeaderLevel.H5,
+        semanticLevel: HeadingLevel.H5,
       },
     },
   ];
   testSuite.forEach(testCase => {
-    it(`should return a ${testCase.expected.value} semanticHeader when the provided value is ${testCase.given.semanticHeader}`, () => {
+    it(`should return a ${testCase.expected.value} semanticLevel when the provided value is ${testCase.given.semanticLevel}`, () => {
       expect(
-        sanitizeSemanticHeaderInput(testCase.given.semanticHeader)
+        sanitizeSemanticHeaderInput(testCase.given.semanticLevel)
       ).to.equal(testCase.expected.value);
     });
   });
@@ -70,7 +70,7 @@ describe('sanitizeAppearanceInput function', () => {
   const testSuite = [
     {
       expected: {
-        value: HeaderHeight.X_LARGE,
+        value: HeadingAppearance.X_LARGE,
       },
       given: {
         appearance: '',
@@ -78,7 +78,7 @@ describe('sanitizeAppearanceInput function', () => {
     },
     {
       expected: {
-        value: HeaderHeight.X_LARGE,
+        value: HeadingAppearance.X_LARGE,
       },
       given: {
         appearance: 'toto',
@@ -86,42 +86,42 @@ describe('sanitizeAppearanceInput function', () => {
     },
     {
       expected: {
-        value: HeaderHeight.X_LARGE,
+        value: HeadingAppearance.X_LARGE,
       },
       given: {
-        appearance: HeaderHeight.X_LARGE,
+        appearance: HeadingAppearance.X_LARGE,
       },
     },
     {
       expected: {
-        value: HeaderHeight.LARGE,
+        value: HeadingAppearance.LARGE,
       },
       given: {
-        appearance: HeaderHeight.LARGE,
+        appearance: HeadingAppearance.LARGE,
       },
     },
     {
       expected: {
-        value: HeaderHeight.MEDIUM,
+        value: HeadingAppearance.MEDIUM,
       },
       given: {
-        appearance: HeaderHeight.MEDIUM,
+        appearance: HeadingAppearance.MEDIUM,
       },
     },
     {
       expected: {
-        value: HeaderHeight.SMALL,
+        value: HeadingAppearance.SMALL,
       },
       given: {
-        appearance: HeaderHeight.SMALL,
+        appearance: HeadingAppearance.SMALL,
       },
     },
     {
       expected: {
-        value: HeaderHeight.X_SMALL,
+        value: HeadingAppearance.X_SMALL,
       },
       given: {
-        appearance: HeaderHeight.X_SMALL,
+        appearance: HeadingAppearance.X_SMALL,
       },
     },
   ];
